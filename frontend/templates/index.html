@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador de Letras - Olivia Rodrigo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎵 Busque um trecho de música</h1>
+    <input type="text" id="trecho" placeholder="Digite um trecho..." />
+    <button onclick="buscar()">Buscar</button>
+
+    <div id="resultados"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

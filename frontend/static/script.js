@@ -31,3 +31,15 @@ async function buscar() {
     resultadosDiv.appendChild(bloco);
   });
 }
+
+async function limpar() {
+  document.getElementById("trecho").value = "";
+  document.getElementById("resultados").innerHTML = "";
+}
+
+document.getElementById("trecho").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // impede recarregar a página
+        buscar(); // chama a função de busca
+    }
+});

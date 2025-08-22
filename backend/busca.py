@@ -9,15 +9,6 @@ def normalizar_texto(texto):
     texto = texto.encode("ascii", "ignore").decode("utf-8")
     return texto.lower().strip()
 
-def trecho_negrito(trecho, texto):
-    # Envolve o trecho encontrado em negrito (HTML)
-    trecho_normalizado = normalizar_texto(trecho)
-    texto_normalizado = normalizar_texto(texto)
-    if trecho_normalizado in texto_normalizado:
-        formatted_trecho = f"\033[1m{trecho}\033[0m"
-        texto = texto_normalizado.replace(trecho_normalizado, formatted_trecho)
-    return texto
-
 def buscar_trecho(trecho_busca):
     trecho_busca_norm = normalizar_texto(trecho_busca)
     resultados = []
@@ -38,8 +29,7 @@ def buscar_trecho(trecho_busca):
         for linha in linhas:
             linha_norm = normalizar_texto(linha)
             if trecho_busca_norm in linha_norm:
-                linhas_encontradas.append(trecho_negrito(trecho_busca, linha.strip()))
-                #linhas_encontradas.append(linha.strip())
+                linhas_encontradas.append(linha.strip())
 
         if linhas_encontradas:
             resultados.append({
@@ -48,7 +38,6 @@ def buscar_trecho(trecho_busca):
             })
 
     return resultados
-
 
 if __name__ == "__main__":
     trecho = input("Digite um trecho da música: ").strip()

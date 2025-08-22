@@ -10,8 +10,10 @@
     <h1>🎵 Busque um trecho de música</h1>
     <input type="text" id="trecho" placeholder="Digite um trecho..." />
     <button onclick="buscar()">Buscar</button>
+    <button onclick="limpar()">Limpar</button>
 
-    <div id="resultados"></div>
+  
+  <div type="text" id="resultados"></div>
   </div>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>

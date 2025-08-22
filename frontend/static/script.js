@@ -18,7 +18,6 @@ async function buscar() {
     return;
   }
 
-  //PARA COLOCAR EM NEGRITO O TRECHO ENCONTRADO VAI TER QUE MEXER AQUI
   resultadosDiv.innerHTML = "";
   dados.forEach(item => {
     const bloco = document.createElement("div");
@@ -32,11 +31,13 @@ async function buscar() {
   });
 }
 
+// Limpa o campo de busca e os resultados
 async function limpar() {
   document.getElementById("trecho").value = "";
   document.getElementById("resultados").innerHTML = "";
 }
 
+// Busca ao pressionar Enter
 document.getElementById("trecho").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         event.preventDefault(); // impede recarregar a página

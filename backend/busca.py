@@ -34,6 +34,7 @@ def buscar_trecho(trecho_busca):
         if linhas_encontradas:
             resultados.append({
                 "musica": nome_arquivo.replace(".txt", "").replace("_", " ").title(),
+                "arquivo": nome_arquivo.replace(".txt", ""),
                 "trechos": linhas_encontradas[:3]  # até 3 trechos por música
             })
 

@@ -22,11 +22,15 @@ async function buscar() {
   dados.forEach(item => {
     const bloco = document.createElement("div");
     bloco.innerHTML = `<h3>🎤 ${item.musica}</h3>`;
+
     item.trechos.forEach(trecho => {
-      const p = document.createElement("p");
-      p.textContent = `➜ ${trecho}`;
-      bloco.appendChild(p);
-    });
+    const p = document.createElement("p");
+    p.innerHTML = `➜ <a href="/musica/${item.arquivo}">${trecho}</a>`;
+    // nome do arquivo: já salvo com "_" no lugar de espaços
+    const nomeArquivo = item.musica.toLowerCase().replace(/ /g, "_");
+    bloco.appendChild(p);
+  });
+
     resultadosDiv.appendChild(bloco);
   });
 }

@@ -30,3 +30,52 @@ button {
 #resultados {
   margin-top: 20px;
 }
+
+body.pagina-musica {
+    font-family: 'Georgia', serif;
+    background: #463f78;
+    color: #222;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.titulo-musica {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #6a1b9a;
+}
+
+.letra {
+    white-space: pre-wrap;
+    line-height: 0.3;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.letra p {
+    margin: 0 0 10px 0;
+}
+
+.botao-voltar {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    background: #6a1b9a;
+    color: #fff;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.botao-voltar:hover {
+    background: #4a148c;
+}

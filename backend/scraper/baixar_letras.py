@@ -4,10 +4,22 @@ import os
 import time
 import re
 
+from scraper.utils import limpar_musicas
 
 BASE_URL = "https://www.letras.mus.br"
 ARTISTA_URL = f"{BASE_URL}/olivia-rodrigo/"
 PASTA_SAIDA = "letras"
+
+def executar_scraper(pasta_saida=PASTA_SAIDA):
+    links = obter_links_musicas()
+    print(f"🎶 {len(links)} músicas encontradas.")
+    
+    for url in links:
+        try:
+            baixar_letra(url, pasta_saida)
+            time.sleep(1)  # pausa entre requisições
+        except Exception as e:
+            print(f"⚠️ Erro ao baixar {url}: {e}")
 
 def obter_links_musicas():
     print("🔍 Coletando links das músicas...")
@@ -30,12 +42,12 @@ def obter_links_musicas():
     return list(set(links))  # evita duplicatas
 
 
-
 def limpar_nome(titulo):
     nome = titulo.lower().replace(" ", "_").replace("/", "-")
+    limpar_musicas(PASTA_SAIDA)
     return ''.join(c for c in nome if c.isalnum() or c in ['_', '-'])
 
-def baixar_letra(url):
+def baixar_letra(url, PASTA_SAIDA):
     resposta = requests.get(url)
     sopa = BeautifulSoup(resposta.text, "html.parser")
 

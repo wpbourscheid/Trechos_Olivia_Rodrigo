@@ -2,11 +2,20 @@ from flask import Flask, render_template, request, jsonify
 from busca import buscar_trecho
 import os
 
+from scraper.baixar_letras import executar_scraper
+
 # Caminhos relativos ao diretório atual (backend)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_DIR = os.path.join(BASE_DIR, "..", "frontend", "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "..", "frontend", "static")
 LETRAS_DIR = os.path.join(BASE_DIR, "..", "letras")
+
+if not os.path.exists(LETRAS_DIR) or not os.listdir(LETRAS_DIR):
+    print("📥 Diretório de letras vazio ou inexistente. Iniciando download..." )
+    os.makedirs(LETRAS_DIR, exist_ok=True)
+    executar_scraper(LETRAS_DIR)
+else:
+    print("✅ Diretório de letras encontrado e não está vazio.")
 
 # Inicializando o Flask com caminhos personalizados
 app = Flask(__name__, template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)

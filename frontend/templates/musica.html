@@ -9,12 +9,24 @@
     <div class="container">
         <h1 class="titulo-musica">{{ titulo }}</h1>
 
-        <div class="letra">
-            {% for linha in letra.splitlines() %}
-                <p>{{ linha }}</p>
-            {% endfor %}
+        <div class="conteudo">
+            <div class="letra">
+                {% for linha in letra.splitlines() %}
+                    <p>{{ linha }}</p>
+                {% endfor %}
+            </div>
+            {% if video_id %}
+            <div class="player">
+                <iframe width="400" height="225"
+                    src="https://www.youtube.com/embed/{{ video_id }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            {% endif %}
         </div>
-
+        
         <a href="{{ url_for('index') }}" class="botao-voltar">⬅ Voltar para a busca</a>
     </div>
 </body>

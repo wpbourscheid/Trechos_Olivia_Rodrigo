@@ -39,8 +39,8 @@ body.pagina-musica {
     padding: 20px;
 }
 
-.container {
-    max-width: 800px;
+.container-musica {
+    max-width: 1100px;
     margin: auto;
     padding: 20px;
     background: #fff;
@@ -55,15 +55,29 @@ body.pagina-musica {
     color: #6a1b9a;
 }
 
+.conteudo{
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
 .letra {
-    white-space: pre-wrap;
-    line-height: 0.3;
+    flex: 2;
+    line-height: 1.3;
     font-size: 1.1rem;
-    margin-bottom: 30px;
 }
 
 .letra p {
     margin: 0 0 10px 0;
+}
+
+.player {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .botao-voltar {

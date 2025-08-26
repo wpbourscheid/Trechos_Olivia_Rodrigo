@@ -10,6 +10,24 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "..", "frontend", "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "..", "frontend", "static")
 LETRAS_DIR = os.path.join(BASE_DIR, "..", "letras")
 
+VIDEOS = {
+    "vampire":"RlPNh_PBZb4?si=666UCJ6uB14zXRyP", #1
+    "bad_idea_right":"Dj9qJsJTsjQ?si=rliq29h3xPkizh1t", #2
+    "the_grudge": "Qt5wB7KXSaM?si=de7EAQrCbeLtli5I", #3
+    "all-american_bitch": "Qt5wB7KXSaM?si=IxTi9MbCirAMQAZj", #4
+    "good_4_u": "gNi_6U5Pm_o?si=4AvnjRyz9gQ90dNJ", #5
+    "obsessed":"QXcjPySjdJU?si=dJbfTLI-8DKbT-82", #6
+    "drivers_license": "ZmDBbnmKpqQ?si=r2pUsEBjdGdEYpum", #7
+    "get_him_back" : "ZsJ-BHohXRI?si=5U0ppJDwJ0irMEbD", #8
+    "love_is_embarrassing": "AXi213cWgYM?si=anp6i0U247d67tGS", #9
+    "logical" : "I6OeAufKDBg?si=AJFzpg0UrwFTVNvV", #10
+    "so_american" : "W-PGNyhmSKA?si=_X8YoeTHLce83mgm", #11
+    "traitor" : "CRrf3h9vhp8?si=c6MMaX0jfbm1326P", #12
+    "deja_vu" : "cii6ruuycQA?si=bA-MvaGxAXbkv9v7", #13
+    "favorite_crime" : "AyX_LL9nWSE?si=Mx2sZerh7-2ETsU5", #14
+    "cant_catch_me_now" : "GlM6lcFbLSg?si=XvBYQbgBbUTsI1uW", #15
+}
+
 if not os.path.exists(LETRAS_DIR) or not os.listdir(LETRAS_DIR):
     print("📥 Diretório de letras vazio ou inexistente. Iniciando download..." )
     os.makedirs(LETRAS_DIR, exist_ok=True)
@@ -39,8 +57,9 @@ def mostrar_musica(nome):
         with open(caminho_musica, "r", encoding="utf-8") as arquivo:
             letra = arquivo.read()
             titulo = nome.replace("_"," ").title()
+            video_id = VIDEOS.get(nome)
             print("➡️ Procurando arquivo:", caminho_musica)
-        return render_template("musica.html", titulo=titulo, letra=letra)
+        return render_template("musica.html", titulo=titulo, letra=letra, video_id=video_id)
     else:
         return "Arquivo não encontrado", 404
     

@@ -39,16 +39,25 @@ body.pagina-musica {
     padding: 20px;
 }
 
-.container-musica {
-    max-width: 1100px;
+.layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 1200px;
     margin: auto;
+}
+
+.container-musica {
+    flex: 0 0 66%;
     padding: 20px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
 .titulo-musica {
+    flex: 2;
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 20px;
@@ -72,12 +81,18 @@ body.pagina-musica {
 }
 
 .player {
-    flex: 1;
+    flex: 0 0 33%;       /* garante 1/3 da tela */
     position: sticky;
     top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.player iframe {
+    width: 100%;          /* vídeo respeita os 33% */
+    height: auto;
+    aspect-ratio: 16/9;   /* mantém proporção */
+    border-radius: 8px;
 }
 
 .botao-voltar {

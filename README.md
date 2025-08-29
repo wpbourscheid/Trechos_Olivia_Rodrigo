@@ -12,21 +12,26 @@ A ideia inicial é expandir o projeto, mas sem abranger outros artistas. O foco 
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/wpbourscheid/olivia-letras.git
+    git clone https://github.com/wpbourscheid/Trechos_Olivia_Rodrigo.git
     ```
 2. Acesse a pasta do projeto:
     ```bash
-    cd olivia-letras
+    cd Trechos_Olivia_Rodrigo
     ```
-3. Instale as dependências (se houver):
+3. Crie um ambiente virtual:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+
+4. Instale as dependências (se houver):
     ```bash
     pip install -r requirements.txt
     ```
-4. Execute o arquivo `app.py`:
+5. Execute o arquivo `app.py`:
     ```bash
     python app.py
     ```
-5. Abra o navegador e acesse o endereço informado pelo terminal para visualizar as letras.
+6. Abra o navegador e acesse o endereço informado pelo terminal para visualizar as letras.
 
 ## Planos para as próximas versões
 

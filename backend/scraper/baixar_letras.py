@@ -8,7 +8,8 @@ from scraper.utils import limpar_musicas
 
 BASE_URL = "https://www.letras.mus.br"
 ARTISTA_URL = f"{BASE_URL}/olivia-rodrigo/"
-PASTA_SAIDA = "letras"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PASTA_SAIDA = os.path.join(BASE_DIR, "..", "..", "letras")
 
 def executar_scraper(pasta_saida=PASTA_SAIDA):
     links = obter_links_musicas()

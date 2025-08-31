@@ -1,7 +1,8 @@
 import os
 import unicodedata
 
-PASTA_LETRAS = "letras"  # ajuste se necessário
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PASTA_LETRAS = os.path.join(BASE_DIR, "..", "letras")
 
 def normalizar_texto(texto):
     # Remove acentos e coloca tudo em minúsculo

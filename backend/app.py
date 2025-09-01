@@ -28,6 +28,10 @@ VIDEOS = {
     "cant_catch_me_now" : "GlM6lcFbLSg?si=XvBYQbgBbUTsI1uW", #15
 }
 
+# TODO: Pegar álbuns
+# TODO: Mudar para API dos videos (spotify?)
+# TODO: Implementar cache dos resultados de busca
+
 if not os.path.exists(LETRAS_DIR) or not os.listdir(LETRAS_DIR):
     print("📥 Diretório de letras vazio ou inexistente. Iniciando download..." )
     os.makedirs(LETRAS_DIR, exist_ok=True)

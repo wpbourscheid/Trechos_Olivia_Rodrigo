@@ -14,10 +14,13 @@ def buscar_trecho(trecho_busca):
     trecho_busca_norm = normalizar_texto(trecho_busca)
     resultados = []
 
+# TODO: Permitir busca por nome da música além do trecho
+
+
     for nome_arquivo in os.listdir(PASTA_LETRAS):
         if not nome_arquivo.endswith(".txt"):
             continue
-
+        
         caminho = os.path.join(PASTA_LETRAS, nome_arquivo)
         try:
             with open(caminho, "r", encoding="utf-8") as f:

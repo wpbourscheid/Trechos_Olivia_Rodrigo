@@ -48,3 +48,6 @@ document.getElementById("trecho").addEventListener("keypress", function(event) {
         buscar(); // chama a função de busca
     }
 });
+
+// TODO: melhorar destaque do trecho encontrado NEGRITO
+

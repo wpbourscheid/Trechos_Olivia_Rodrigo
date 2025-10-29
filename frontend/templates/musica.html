@@ -19,16 +19,18 @@
         <a href="{{ url_for('index') }}" class="botao-voltar">⬅ Voltar para a busca</a>
         </div>
 
-        {% if video_id %}
-            <div class="player">
-                <iframe width="100%" height="315"
-                    src="https://www.youtube.com/embed/{{ video_id }}"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        {% endif %}
+        {% if track_id %}
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/{{ track_id }}?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameBorder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+        </div>
+{% endif %}
     </div>
 </body>
 </html>

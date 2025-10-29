@@ -3,8 +3,8 @@ import requests
 import base64
 import os
 
-CLIENT_ID = "8577b0f614d046ba959b1b8dfdaed714"
-CLIENT_SECRET = "b2519e78a58f4f7fb35992701a1e1128"
+CLIENT_ID = open("backend/senha.txt").read().strip()
+CLIENT_SECRET = open("backend/senha.txt").read().strip()
 
 def get_token():
     url = "https://accounts.spotify.com/api/token"

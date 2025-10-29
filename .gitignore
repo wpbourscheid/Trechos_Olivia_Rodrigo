@@ -25,3 +25,5 @@ Thumbs.db
 
 # Ignora letras se você quiser manter a pasta local
 letras/
+
+backend/senha.txt

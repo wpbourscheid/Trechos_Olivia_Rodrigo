@@ -14,9 +14,13 @@ def normalizar_texto(texto):
 def buscar_trecho(trecho_busca):
     trecho_busca_norm = normalizar_texto(trecho_busca)
     resultados = []
+
     for nome_arquivo in os.listdir(PASTA_LETRAS):
         if not nome_arquivo.endswith(".txt"):
             continue
+
+        nome_limpo = nome_arquivo.replace(".txt", "").replace("_", " ")
+        nome_norm = normalizar_texto(nome_limpo)
 
         caminho = os.path.join(PASTA_LETRAS, nome_arquivo)
         try:
@@ -26,17 +30,26 @@ def buscar_trecho(trecho_busca):
             print(f"⚠️ Erro ao ler {nome_arquivo}: {e}")
             continue
 
+        # 🔹 Se o nome da música contém o trecho buscado
+        encontrou = False
         linhas_encontradas = []
+
+        if trecho_busca_norm in nome_norm:
+            encontrou = True
+
+        # 🔹 Busca o trecho dentro da letra
         for linha in linhas:
             linha_norm = normalizar_texto(linha)
             if trecho_busca_norm in linha_norm:
                 linhas_encontradas.append(linha.strip())
+                encontrou = True
 
-        if linhas_encontradas:
+        # 🔹 Se encontrou no nome ou em alguma linha, adiciona aos resultados
+        if encontrou:
             resultados.append({
-                "musica": nome_arquivo.replace(".txt", "").replace("_", " ").title(),
+                "musica": nome_limpo.title(),
                 "arquivo": nome_arquivo.replace(".txt", ""),
-                "trechos": linhas_encontradas[:3]  # até 3 trechos por música
+                "trechos": linhas_encontradas[:3] if linhas_encontradas else ["(Nome da música corresponde à busca)"]
             })
 
     return resultados

@@ -91,8 +91,7 @@ def mostrar_musica(nome):
         return "Arquivo não encontrado", 404
 
 
+
 if __name__ == "__main__":
-    print("Rotas registradas:")
-    for rule in app.url_map.iter_rules():
-        print(rule)
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)

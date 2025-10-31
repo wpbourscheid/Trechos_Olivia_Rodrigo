@@ -7,9 +7,13 @@ O projeto foi desenvolvido em Python (Flask) com integração às APIs do Spotif
 ## 🧠 Funcionalidades
 
 ✅ Buscar músicas digitando um trecho da letra
+
 ✅ Visualizar a letra completa da música encontrada
+
 ✅ Player interativo do Spotify integrado
+
 ✅ Coleta automática das letras via web scraping
+
 ✅ Interface simples, responsiva e moderna
 
 ## ⚙️ Instalação e Execução

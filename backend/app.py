@@ -13,25 +13,6 @@ STATIC_DIR = os.path.join(BASE_DIR, "..", "frontend", "static")
 LETRAS_DIR = os.path.join(BASE_DIR, "..", "letras")
 SPOTIFY_TOKEN = spotify_token.get_token()
 
-"""
-VIDEOS = {
-    "vampire":"RlPNh_PBZb4?si=666UCJ6uB14zXRyP", #1
-    "bad_idea_right":"Dj9qJsJTsjQ?si=rliq29h3xPkizh1t", #2
-    "the_grudge": "Qt5wB7KXSaM?si=de7EAQrCbeLtli5I", #3
-    "all-american_bitch": "Qt5wB7KXSaM?si=IxTi9MbCirAMQAZj", #4
-    "good_4_u": "gNi_6U5Pm_o?si=4AvnjRyz9gQ90dNJ", #5
-    "obsessed":"QXcjPySjdJU?si=dJbfTLI-8DKbT-82", #6
-    "drivers_license": "ZmDBbnmKpqQ?si=r2pUsEBjdGdEYpum", #7
-    "get_him_back" : "ZsJ-BHohXRI?si=5U0ppJDwJ0irMEbD", #8
-    "love_is_embarrassing": "AXi213cWgYM?si=anp6i0U247d67tGS", #9
-    "logical" : "I6OeAufKDBg?si=AJFzpg0UrwFTVNvV", #10
-    "so_american" : "W-PGNyhmSKA?si=_X8YoeTHLce83mgm", #11
-    "traitor" : "CRrf3h9vhp8?si=c6MMaX0jfbm1326P", #12
-    "deja_vu" : "cii6ruuycQA?si=bA-MvaGxAXbkv9v7", #13
-    "favorite_crime" : "AyX_LL9nWSE?si=Mx2sZerh7-2ETsU5", #14
-    "cant_catch_me_now" : "GlM6lcFbLSg?si=XvBYQbgBbUTsI1uW", #15
-}"""
-
 TRACKS_SPOTIFY = {
     "vampire": "1kuGVB7EU95pJObxwvfwKS",
     "bad_idea_right": "3IX0yuEVvDbnqUwMBB3ouC",
@@ -51,7 +32,6 @@ TRACKS_SPOTIFY = {
 }
 
 # TODO: Pegar álbuns
-# TODO: Mudar para API dos videos (spotify?)
 # TODO: Implementar cache dos resultados de busca
 
 if not os.path.exists(LETRAS_DIR) or not os.listdir(LETRAS_DIR):

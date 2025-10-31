@@ -2,11 +2,19 @@
 import requests
 import base64
 import os
+from dotenv import load_dotenv
 
-CLIENT_ID = open("backend/senha.txt").read().strip()
-CLIENT_SECRET = open("backend/senha.txt").read().strip()
+# Carrega variáveis do arquivo .env
+load_dotenv()
+
+CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
 def get_token():
+    """Obtém um access token via Client Credentials Flow"""
+    if not CLIENT_ID or not CLIENT_SECRET:
+        raise ValueError("CLIENT_ID ou CLIENT_SECRET não configurados no .env")
+
     url = "https://accounts.spotify.com/api/token"
     auth_str = f"{CLIENT_ID}:{CLIENT_SECRET}"
     b64_auth_str = base64.b64encode(auth_str.encode()).decode()
@@ -20,4 +28,5 @@ def get_token():
     return token
 
 if __name__ == "__main__":
-    print("Token:", get_token())
+    print("Token gerado com sucesso:")
+    print(get_token())

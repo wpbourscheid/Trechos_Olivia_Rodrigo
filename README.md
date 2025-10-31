@@ -35,7 +35,7 @@ Windows (PowerShell):
 ```
 4️⃣ Configuração do Spotify:
 
-Para habilitar o player e as informações das músicas, é necessário configurar uma conta no Spotify for Developers.
+Para habilitar o player, informações e amostra das músicas, é necessário configurar uma conta no Spotify for Developers.
 
 1. Acesse [Spotify for Developers](https://developer.spotify.com/dashboard)
 
@@ -43,7 +43,7 @@ Para habilitar o player e as informações das músicas, é necessário configur
 
 3. Em Redirect URI, adicione:
 ```bash
-http://127.0.0.1:8888/callback
+    http://127.0.0.1:8888/callback
 ```
 4. Copie o Client ID e Client Secret
 
@@ -61,8 +61,7 @@ http://127.0.0.1:8888/callback
     python backend/app.py
 ```
 Abra no navegador:
-👉 http://127.0.0.1:5000
-Ou link fornecido no terminal
+👉 http://127.0.0.1:5000 (Ou link fornecido no terminal)
 
 
 ## 🧩 Exemplo de Uso

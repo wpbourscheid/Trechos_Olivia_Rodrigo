@@ -1,44 +1,119 @@
-# Olivia Letras
-Este projeto tem como objetivo disponibilizar letras de músicas de forma organizada e acessível. Até o momento, foram desenvolvidas as seguintes etapas:
+# 🎵 Trechos Olivia Rodrigo
 
-- Estruturação inicial do repositório
-- Adição das letras das músicas selecionadas
-- Organização das informações por artista e álbum
-- Realização de scraping das músicas da Olivia Rodrigo (armazenamento interno, cerca de 252 KB)
+Um site interativo que permite buscar trechos de músicas da Olivia Rodrigo e visualizar a letra completa junto com o player do Spotify, mostrando informações da faixa como álbum e duração.
 
-A ideia inicial é expandir o projeto, mas sem abranger outros artistas. O foco será aprimorar as formas de armazenamento e explorar novas possibilidades de uso das informações coletadas.
+O projeto foi desenvolvido em Python (Flask) com integração às APIs do Spotify e BeautifulSoup para coleta das letras.
 
-## Como rodar o projeto
+## 🧠 Funcionalidades
 
-1. Clone o repositório:
-    ```bash
+✅ Buscar músicas digitando um trecho da letra
+✅ Visualizar a letra completa da música encontrada
+✅ Player interativo do Spotify integrado
+✅ Coleta automática das letras via web scraping
+✅ Interface simples, responsiva e moderna
+
+## ⚙️ Instalação e Execução
+1️⃣ Clonar o Repositório:
+```bash
     git clone https://github.com/wpbourscheid/Trechos_Olivia_Rodrigo.git
-    ```
-2. Acesse a pasta do projeto:
-    ```bash
     cd Trechos_Olivia_Rodrigo
-    ```
-3. Crie um ambiente virtual:
-    ```bash
+```
+2️⃣ Criar e Ativar o Ambiente Virtual
+Linux / macOS:
+```bash
     python3 -m venv venv
     source venv/bin/activate
-
-4. Instale as dependências (se houver):
-    ```bash
+```
+Windows (PowerShell):
+```bash
+    python -m venv venv
+    venv\Scripts\activate
+```
+3️⃣ Instalar Dependências
+```bash
     pip install -r requirements.txt
-    ```
-5. Execute o arquivo `app.py`:
-    ```bash
-    python app.py
-    ```
-6. Abra o navegador e acesse o endereço informado pelo terminal para visualizar as letras.
+```
+4️⃣ Configuração do Spotify:
 
-## Planos para as próximas versões
+Para habilitar o player e as informações das músicas, é necessário configurar uma conta no Spotify for Developers.
 
-Nas próximas atualizações, está previsto:
+    1. Acesse https://developer.spotify.com/dashboard
 
-- Inclusão de mais informações sobre cada música, como capa do álbum e vídeo oficial
-- Melhoria na navegação e apresentação dos dados
-- Mudanças nas formas de armazenamento e nas funcionalidades oferecidas, mantendo o foco nas músicas da Olivia Rodrigo
+    2. Crie um novo App com nome (ex: Trechos Olivia Rodrigo)
 
-O projeto está em constante evolução para oferecer uma experiência cada vez mais completa aos usuários.
+    3. Em Redirect URI, adicione:
+```bash
+    http://127.0.0.1:8888/callback
+```
+    4. Copie o Client ID e Client Secret
+
+    5. Faça uma cópia do arquivo .env.example e renomeie para .env:
+```bash
+    cp .env.example .env
+```
+    6. Abra o .env e preencha com suas credenciais:
+```bash
+    SPOTIFY_CLIENT_ID=seu_client_id_aqui
+    SPOTIFY_CLIENT_SECRET=seu_client_secret_aqui
+```
+5️⃣ Rodar o Servidor
+```bash
+    python backend/app.py
+```
+Abra no navegador:
+👉 http://127.0.0.1:5000
+Ou link fornecido no terminal
+
+
+## 🧩 Exemplo de Uso
+
+Na página inicial, digite um trecho da letra (ex: car ride to malibu)
+
+O sistema exibirá as músicas que contêm esse trecho
+
+Clique em uma das músicas para abrir:
+    - Letra completa
+    - Player oficial do Spotify
+    - Informações da música (álbum, duração, etc.)
+
+
+## 🧰 Tecnologias Utilizadas
+|   Tecnologia   |          Descrição            |
+| -------------  | ----------------------------- |
+| Python 3	     | Linguagem principal           |
+| Flask	Framework| Web                           |
+| BeautifulSoup4 | Web scraping das letras       |
+| Requests	     | Comunicação com APIs externas |
+| Spotify Web API| Dados e player das músicas    |
+| HTML/CSS/JS	 | Frontend responsivo           |
+| python-dotenv	 | Gestão de credenciais seguras |
+
+
+## 📦 Dependências
+```bash
+Flask==3.1.1
+requests==2.32.4
+beautifulsoup4==4.13.4
+python-dotenv==1.0.1
+lxml==5.2.2
+```
+
+## 💡 Próximos Passos / TODO
+
+ Implementar cache dos resultados de busca
+
+ Exibir capa do álbum e preview da faixa
+
+ Adicionar sistema de favoritos local
+
+ Explorar deploy no Render / Railway
+
+## 👨‍💻 Autor
+
+### William Pedrolo Bourscheid
+Graduando em Ciência da Computação (UFPel)
+Foco em desenvolvimento Back-End, aprendizado de máquina, análise de dados e desenvolvimento web.
+
+🔗 [LinkedIn](https://www.linkedin.com/in/wpbourscheid/)
+
+🐙 [GitHub](https://github.com/wpbourscheid)

@@ -37,21 +37,21 @@ Windows (PowerShell):
 
 Para habilitar o player e as informações das músicas, é necessário configurar uma conta no Spotify for Developers.
 
-    1. Acesse https://developer.spotify.com/dashboard
+    Acesse [Spotify for Developers](https://developer.spotify.com/dashboard)
 
-    2. Crie um novo App com nome (ex: Trechos Olivia Rodrigo)
+    Crie um novo App com nome (ex: Trechos Olivia Rodrigo)
 
-    3. Em Redirect URI, adicione:
+    Em Redirect URI, adicione:
 ```bash
     http://127.0.0.1:8888/callback
 ```
-    4. Copie o Client ID e Client Secret
+    Copie o Client ID e Client Secret
 
-    5. Faça uma cópia do arquivo .env.example e renomeie para .env:
+    Faça uma cópia do arquivo .env.example e renomeie para .env:
 ```bash
     cp .env.example .env
 ```
-    6. Abra o .env e preencha com suas credenciais:
+    Abra o .env e preencha com suas credenciais:
 ```bash
     SPOTIFY_CLIENT_ID=seu_client_id_aqui
     SPOTIFY_CLIENT_SECRET=seu_client_secret_aqui
